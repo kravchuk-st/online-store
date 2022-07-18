@@ -1,0 +1,187 @@
+.filter-list li {
+  margin-left: 20px;
+}
+
+.filter-shape .filter-btn {
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  background-color: transparent;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.filter-shape .filter-btn.samsung {
+  background-image: url(../../../img/samsung.svg);
+}
+
+.filter-shape .filter-btn.apple {
+  background-image: url(../../../img/apple.svg);
+}
+
+.filter-shape .filter-btn.xiaomi {
+  background-image: url(../../../img/xiaomi.svg);
+}
+
+.filter-camers .filter-btn {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.filter-colors .filter-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 0;
+  box-sizing: border-box;
+  transition: all 0.1s;
+}
+
+.filter-colors li:nth-child(1) .filter-btn {
+  background-color: black;
+}
+
+.filter-colors li:nth-child(2) .filter-btn {
+  background-color: red;
+}
+
+.filter-colors li:nth-child(3) .filter-btn {
+  background-color: blue;
+}
+
+.filter-colors li:nth-child(4) .filter-btn {
+  background-color: white;
+}
+
+.filter-active {
+  border: 2px solid #00a046;
+  box-shadow: 0px 0px 15px 5px rgba(0,160,70,0.3);
+  text-decoration: none;
+}
+
+.range {
+  margin-top: 10px;
+}
+
+input[type="range"] {
+  margin-top: 15px;
+  border-radius: 8px;
+  height: 5px;
+  width: 100%;
+  outline: none;
+  transition: all 450ms ease-in;
+  -webkit-appearance: none;
+  background: #003d7c;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  position: relative;
+  z-index: 5;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #434343;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #fff;
+}
+
+@-moz-document url-prefix() {
+  input[type="range"] {
+    position: relative;
+    z-index: 1;
+    margin-top: 15px;
+    border-radius: 8px;
+    height: 5px;
+    width: 100%;
+    outline: none;
+    transition: all 450ms ease-in;
+    -moz-appearance: none;
+    background: #003d7c;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    position: relative;
+    z-index: 5;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #434343;
+    border-radius: 50%;
+    -moz-appearance: none;
+    cursor: pointer;
+    background: #fff;
+  }
+}
+
+.rangeslider{
+  position: relative;
+  height: 60px;
+  width: 100%;
+  display: inline-block;
+}
+
+.rangeslider span{
+  min-width: 20px;
+  background-color: #2ea44f;
+  background-image: linear-gradient(180deg,hsla(0,0%,100%,0.15),hsla(0,0%,100%,0));
+  border-color: #2ea44f;
+  box-shadow: 0 1px 1px rgb(18 21 26 / 8%);
+  color: #fff;
+  padding: 0px 3px;
+  border-radius: 3px;
+  font-size: 18px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.rangeslider span.left{
+  left: 0;
+}
+
+.rangeslider span.right{
+  right: 0;
+}
+
+.rangeslider input{
+  position: absolute;
+}
+
+.filter-name {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.filter-name-close {
+  display: none;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  right: 5px;
+  transform: translate(-50%, -50%);
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle/%3E%3Cg data-name='Layer 57' id='Layer_57'%3E%3Cpath d='M18.83,16l8.59-8.59a2,2,0,0,0-2.83-2.83L16,13.17,7.41,4.59A2,2,0,0,0,4.59,7.41L13.17,16,4.59,24.59a2,2,0,1,0,2.83,2.83L16,18.83l8.59,8.59a2,2,0,0,0,2.83-2.83Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+#input:valid ~ .filter-name-close {
+  display: block;
+}
+
+.btns-reset{
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  gap: 10px;
+}

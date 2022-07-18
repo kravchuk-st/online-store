@@ -1,0 +1,131 @@
+.product-list {
+  padding: 15px 30px;
+  min-height: calc(100vh - 475px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-item {
+  position: relative;
+}
+
+.product-item.active > *{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.product-item > .front,
+.product-item > .back {
+  display: block;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 0.5s;
+  transition-property: transform, opacity;
+}
+
+.product-item > .front {
+  transform: rotateY(0deg);
+}
+
+.product-item > .back {
+  position: absolute;
+  opacity: 0;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(-180deg);
+}
+
+.product-item:hover > .front {
+  transform: rotateY(180deg);
+}
+
+.product-item:hover > .back {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.product-item {
+  position: relative;
+  display: inline-block;
+  margin-right: 2px;
+  margin-bottom: 1em;
+  width: 400px;
+}
+
+.product-item > .front,
+.product-item > .back {
+  display: block;
+  color: white;
+  width: inherit;
+  height: 250px;
+  padding: 1em 2em;
+  background: #4d4d4d;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.product-item > .front {
+  color: #333;
+  background: white;
+  transition: all .3s ease-in-out;
+}
+
+.product-item.item-active > .front {
+  box-shadow: 0px 0px 15px 5px rgb(0 160 70 / 30%);
+}
+
+.product-item > .front img {
+  width: auto;
+  height: 85%;
+}
+
+.product-item > .front h3 {
+  margin-top: 10px;
+}
+
+.product-item .back .list li:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+
+.product-item .back h2{
+  margin-bottom: 10px;
+}
+
+.product-item .back .product-btn {
+  margin-top: 15px;
+  transition: all .3s;
+  color: #000;
+  background-color: #00a046;
+}
+
+.product-item .back .btn-active {
+  background-color: #f84147;
+}
+
+@media (max-width: 768px) {
+  .product-item {
+    width: 300px;
+  }
+
+  .product-item > .back {
+    padding: 1em 10px;
+  }
+
+  .product-item .back h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .product-item > .front h3 {
+    margin-top: 8px;
+    font-size: 18px;
+  }
+}
