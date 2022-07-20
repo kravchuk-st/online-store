@@ -1,4 +1,140 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter&display=swap);
+.modal-overlay {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal__container {
+  padding: 20px;
+  position: relative;
+	width: 90%;
+  max-width: 600px;
+	height: 300px;
+	display: none;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.modal__content {
+  height: inherit;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal__content::-webkit-scrollbar { width: 0; }
+.modal__content { overflow: -moz-scrollbars-none; }
+
+.modal-overlay--visible {
+	opacity: 1;
+	visibility: visible;
+	transition: all 0.3s ease-in-out;
+}
+
+.modal--visible {
+	display: block;
+}
+
+.modal__close {
+  position: absolute;
+  z-index: 1400;
+  right: -45px;
+  top: -40px;
+  width: 45px;
+  height: 45px;
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle/%3E%3Cg data-name='Layer 57' id='Layer_57'%3E%3Cpath d='M18.83,16l8.59-8.59a2,2,0,0,0-2.83-2.83L16,13.17,7.41,4.59A2,2,0,0,0,4.59,7.41L13.17,16,4.59,24.59a2,2,0,1,0,2.83,2.83L16,18.83l8.59,8.59a2,2,0,0,0,2.83-2.83Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 21px, 21px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  border: 2px solid #00a046;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.modal__close:hover {
+  box-shadow: 0px 0px 15px 8px rgb(0 160 70 / 30%);
+}
+
+.modal__table tr td {
+  margin-right: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.modal__table tr td:nth-child(2) {
+  min-width: 70px;
+  text-align: center;
+}
+
+.modal__table tr td:last-child {
+  min-width: 100px;
+  text-align: right;
+  font-weight: 500;
+  color: #808080;
+}
+
+.modal__img {
+  width: auto;
+  height: 50px;
+}
+
+.modal__container::-webkit-scrollbar { width: 0; }
+.modal__container { overflow: -moz-scrollbars-none; }
+
+.modal__text h2 {
+  margin-top: 100px;
+}
+.modal__text p {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .modal__container {
+    width: 75%;
+  }
+
+  .modal__close{
+    right: -40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .modal__close {
+    top: -50px;
+    right: -20px;
+  }
+  
+  .modal__table tr td {
+    font-size: 15px;
+  }
+
+  .modal__table tr td:nth-child(2) {
+    min-width: 50px;
+  }
+
+  .modal__table tr td:last-child {
+    min-width: none;
+  }
+}
+
 .product-list {
   padding: 15px 30px;
   min-height: calc(100vh - 475px);
@@ -128,142 +264,6 @@
   .product-item > .front h3 {
     margin-top: 8px;
     font-size: 18px;
-  }
-}
-
-.modal-overlay {
-	position: fixed;
-  z-index: 1000;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.7);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-	width: 100%;
-	opacity: 0;
-	visibility: hidden;
-	transition: all 0.3s ease-in-out;
-}
-
-.modal__container {
-  padding: 20px;
-  position: relative;
-	width: 90%;
-  max-width: 600px;
-	height: 300px;
-	display: none;
-  background-color: #fff;
-  border-radius: 8px;
-}
-
-.modal__content {
-  height: inherit;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.modal__content::-webkit-scrollbar { width: 0; }
-.modal__content { overflow: -moz-scrollbars-none; }
-
-.modal-overlay--visible {
-	opacity: 1;
-	visibility: visible;
-	transition: all 0.3s ease-in-out;
-}
-
-.modal--visible {
-	display: block;
-}
-
-.modal__close {
-  position: absolute;
-  z-index: 1400;
-  right: -45px;
-  top: -40px;
-  width: 45px;
-  height: 45px;
-  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle/%3E%3Cg data-name='Layer 57' id='Layer_57'%3E%3Cpath d='M18.83,16l8.59-8.59a2,2,0,0,0-2.83-2.83L16,13.17,7.41,4.59A2,2,0,0,0,4.59,7.41L13.17,16,4.59,24.59a2,2,0,1,0,2.83,2.83L16,18.83l8.59,8.59a2,2,0,0,0,2.83-2.83Z'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 21px, 21px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #fff;
-  border: 2px solid #00a046;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  border-radius: 50%;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-.modal__close:hover {
-  box-shadow: 0px 0px 15px 8px rgb(0 160 70 / 30%);
-}
-
-.modal__table tr td {
-  margin-right: 10px;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: left;
-}
-
-.modal__table tr td:nth-child(2) {
-  min-width: 70px;
-  text-align: center;
-}
-
-.modal__table tr td:last-child {
-  min-width: 100px;
-  text-align: right;
-  font-weight: 500;
-  color: #808080;
-}
-
-.modal__img {
-  width: auto;
-  height: 50px;
-}
-
-.modal__container::-webkit-scrollbar { width: 0; }
-.modal__container { overflow: -moz-scrollbars-none; }
-
-.modal__text h2 {
-  margin-top: 100px;
-}
-.modal__text p {
-  margin-top: 20px;
-}
-
-@media (max-width: 768px) {
-  .modal__container {
-    width: 75%;
-  }
-
-  .modal__close{
-    right: -40px;
-  }
-}
-
-@media (max-width: 500px) {
-  .modal__close {
-    top: -50px;
-    right: -20px;
-  }
-  
-  .modal__table tr td {
-    font-size: 15px;
-  }
-
-  .modal__table tr td:nth-child(2) {
-    min-width: 50px;
-  }
-
-  .modal__table tr td:last-child {
-    min-width: none;
   }
 }
 
@@ -472,13 +472,13 @@ html, body {
 
 a:hover,
 .btn:hover {
-  text-decoration: none !important;
+  text-decoration: none;
   transition: all 0.3s;
 }
 
 .btn:focus,
 .btn:active {
-  box-shadow: none !important;
+  box-shadow: none;
 }
 
 ul{
@@ -531,7 +531,7 @@ header {
     column-gap: 20px;
 }
 
-.logo__linck {
+.logo__link {
     color: #333333;
     border: none;
     text-decoration: none;
@@ -581,7 +581,7 @@ header {
 }
 
 .filters {
-    padding: 15px 0;
+    padding: 15px 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
